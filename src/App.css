@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+/* Scroll Down Button */
+.scroll-down-btn {
+  margin-top: 60px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #e943a2;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+  padding: 10px;
+  animation: bounce 2s infinite;
+}
+
+.scroll-down-btn:hover {
+  transform: translateY(8px) scale(1.1);
+  opacity: 1;
+}
+
+.scroll-down-btn:active {
+  transform: translateY(4px) scale(0.95);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
