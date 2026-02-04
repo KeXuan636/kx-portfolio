@@ -5,8 +5,9 @@ export default function ProjectDetails() {
   const { projectId } = useParams();
   const navigate = useNavigate();
 
+  // Find the project index
   const index = projects.findIndex(
-    (p) => p.title.replace(/\s+/g, "-") === projectId
+    (p) => p.title.replace(/\s+/g, "-").toLowerCase() === projectId.toLowerCase()
   );
 
   if (index === -1) return <p>Project not found</p>;
@@ -14,6 +15,9 @@ export default function ProjectDetails() {
   const project = projects[index];
   const nextProject = projects[index + 1];
   const prevProject = projects[index - 1];
+
+  // Check if link is a video file
+  const isVideo = project.link && /\.(mp4|webm|ogg)$/i.test(project.link);
 
   return (
     <section className="project-detail">
@@ -62,13 +66,22 @@ export default function ProjectDetails() {
           <div className="project-actions">
             <button
               className="btn btn-primary"
-              onClick={() => window.open(project.link, "_blank")}
+              onClick={() => {
+                if (isVideo) {
+                  // Open the video directly in a new tab
+                  window.open(project.link, "_blank");
+                } else {
+                  // Open website demos
+                  window.open(project.link, "_blank");
+                }
+              }}
             >
               View Demo
             </button>
           </div>
         )}
 
+        {/* Navigation Buttons */}
         <div className="navigation-buttons">
           {prevProject && (
             <button
