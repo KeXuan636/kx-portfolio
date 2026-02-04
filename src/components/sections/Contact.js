@@ -9,41 +9,37 @@ export default function Contact() {
     message: ''
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [message, setMessage] = useState('');
+  const [messageStatus, setMessageStatus] = useState('');
 
-  // Initialize EmailJS (replace with your public key)
-  const PUBLIC_KEY = 'YOUR_PUBLIC_KEY_HERE';
-  const SERVICE_ID = 'YOUR_SERVICE_ID_HERE';
-  const TEMPLATE_ID = 'YOUR_TEMPLATE_ID_HERE';
+  const PUBLIC_KEY = '324eWMGX4Bd5DhVsx';
+  const SERVICE_ID = 'service_5axbn9b';
+  const TEMPLATE_ID = 'template_mpx50mi';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    setMessage('');
+    setMessageStatus('');
 
     try {
       emailjs.init(PUBLIC_KEY);
-      
+
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, {
-        to_email: 'kexuanlee0709@gmail.com',
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message,
+        to_email: 'kexuanlee0709@gmail.com',
       });
 
-      setMessage('✅ Message sent successfully! I will get back to you soon.');
+      setMessageStatus('✅ Message sent successfully! I will get back to you soon.');
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      console.error('Error sending email:', error);
-      setMessage('❌ Failed to send message. Please try again or contact me directly.');
+      console.error(error);
+      setMessageStatus('❌ Failed to send message. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -53,9 +49,8 @@ export default function Contact() {
     <section id="contact" className="container">
       <h2>Get In Touch</h2>
       <p>Feel free to reach out to me for any inquiries or collaborations.</p>
-      
-      <form className="contact-form" onSubmit={handleSubmit}>
 
+      <form className="contact-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <div className="input-wrapper">
             <Icon icon="lets-icons:user" className="form-icon" width="24" height="24" />
@@ -81,7 +76,7 @@ export default function Contact() {
           {isLoading ? 'Sending...' : 'Send Message'}
         </button>
 
-        {message && <div className="form-message">{message}</div>}
+        {messageStatus && <div className="form-message">{messageStatus}</div>}
       </form>
 
       <div className="contact-divider"></div>
