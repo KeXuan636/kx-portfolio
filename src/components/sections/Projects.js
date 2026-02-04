@@ -76,7 +76,7 @@ const projects = [
     slug: "learn-at-rp-ui-ux-design",
     description: "A user-friendly redesign of the Learn@RP platform to enhance student engagement and accessibility.",
     imageUrl: "/learnrp.png",
-    link: "/learn@rp.mp4",
+    link: "/learnrp.mp4",
     tools: "Figma",
     category: "UI/UX",
     overview:"The Learn@RP UI/UX Design project focuses on redesigning the existing Learn@RP platform to improve student engagement and accessibility. The goal was to create a more intuitive and user-friendly interface that supports students in managing their academic activities efficiently.",
