@@ -28,10 +28,10 @@ export default function Portfolio() {
       <div className="projects-grid">
         {filtered.map(project => (
           <Link
-            to={`/projects/${project.slug}`} 
-            key={project.slug} 
+            to={`/projects/${project.slug}`}
+            key={project.slug}
             className="project-card"
-            >
+          >
             <img src={project.imageUrl} alt={project.title} />
             <h3>{project.title}</h3>
             <p>{project.description}</p>
