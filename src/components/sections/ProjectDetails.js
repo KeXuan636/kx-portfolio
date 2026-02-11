@@ -15,7 +15,7 @@ export default function ProjectDetails() {
   const nextProject = projects[index + 1];
   const prevProject = projects[index - 1];
 
-  const isVideo = project.link && /\.(mp4|webm|ogg)$/i.test(project.link);
+  // const isVideo = project.link && /\.(mp4|webm|ogg)$/i.test(project.link);
 
   return (
     <section className="project-detail">
