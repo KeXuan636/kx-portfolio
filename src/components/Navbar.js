@@ -22,7 +22,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/">
-          <img src="/logo.png" alt="Logo" className="logo" style={{ width: '85px', height: '80px' }} />
+          <img src="./logo.png" alt="Logo" className="logo" style={{ width: '85px', height: '80px' }} />
         </Link>
 
         <div className="navbar-links">

@@ -79,9 +79,9 @@ const projects = [
     link: "/learnrp.mp4",
     tools: "Figma",
     category: "UI/UX",
-    overview:"The Learn@RP UI/UX Design project focuses on redesigning the existing Learn@RP platform to improve student engagement and accessibility. The goal was to create a more intuitive and user-friendly interface that supports students in managing their academic activities efficiently.",
-    solution:"The redesign was created using Figma, where user pain points were analysed and translated into improved layouts and navigation flows. The design incorporates clearer information hierarchy, improved spacing, and simplified interactions to enhance usability for students.",
-    challenges:"Understanding diverse user needs and ensuring accessibility across different user groups was a key challenge. Another challenge was redesigning a familiar platform without disrupting existing workflows. These challenges were addressed through user-centric design principles and iterative refinement."
+    overview:"The Learn@RP UI/UX Design project focuses on designing the Learn@RP platform to improve student engagement and accessibility. The goal was to create a more intuitive and user-friendly interface that supports students in managing their academic activities efficiently.",
+    solution:"The design was created using Figma, where user pain points were analysed and translated into improved layouts and navigation flows. The design incorporates clearer information hierarchy, improved spacing, and simplified interactions to enhance usability for students.",
+    challenges:"Understanding diverse user needs and ensuring accessibility across different user groups was a key challenge."
   },
 ];
 
